@@ -1674,9 +1674,11 @@ void Adafruit_GFX_Button::drawButton(bool inverted) {
     text = _fillcolor;
   }
 
-  uint8_t r = min(_w, _h) / 4; // Corner radius
-  _gfx->fillRoundRect(_x1, _y1, _w, _h, r, fill);
-  _gfx->drawRoundRect(_x1, _y1, _w, _h, r, outline);
+  //uint8_t r = min(_w, _h) / 4; // Corner radius
+  //_gfx->fillRoundRect(_x1, _y1, _w, _h, r, fill);
+  //_gfx->drawRoundRect(_x1, _y1, _w, _h, r, outline);
+  _gfx->fillRect(_x1, _y1, _w, _h, fill);
+  _gfx->drawRect(_x1, _y1, _w, _h, outline);
 
   _gfx->setCursor(_x1 + (_w / 2) - (strlen(_label) * 3 * _textsize_x),
                   _y1 + (_h / 2) - (4 * _textsize_y));
